@@ -10,7 +10,7 @@ After clone this repository :
 
 ## Documentation
 
-* [Ideas](/docs/Detail_idea_.md)
+* [Ideas](/docs/Detail_idea.md)
 
 * [Product Requirements Document (PRD)](/docs/Product_Requirements_Document_PRD_.md)
 
