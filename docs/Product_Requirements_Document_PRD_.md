@@ -1,13 +1,9 @@
----
-
 ### **Product Requirements Document: Buku Pemasok v1.0**
 
 *   **Tanggal:** 28 Juli 2025
 *   **Penulis:** Muhamad Mashudi Ardi Winata
 *   **Status:** Draft
 *   **Target Rilis MVP:** Q1 2026 atau lebih cepat
-
----
 
 ### **1. Latar Belakang & Visi Produk**
 
@@ -44,36 +40,36 @@ Pemilik UMKM mikro kesulitan untuk:
 
 ### **5. User Stories & Ruang Lingkup Fitur (MVP)**
 
-User stories dikelompokkan berdasarkan fitur utama. **Prioritas: P0 = Wajib ada di MVP, P1 = Sebaiknya ada, P2 = Bisa ditunda.**
+User stories dikelompokkan berdasarkan fitur utama. **Prioritas: High = Wajib ada di MVP, Medium = Sebaiknya ada, Low = Bisa ditunda.**
 
 #### **5.1. Onboarding & Setup Awal**
-*   **(P0)** Sebagai pengguna baru, saya ingin bisa mendaftar dengan mudah menggunakan nomor telepon atau akun Google agar bisa cepat memulai.
-*   **(P1)** Sebagai pengguna baru, saya ingin melihat tutorial singkat (3-4 layar) yang menjelaskan fungsi utama aplikasi agar saya tidak bingung.
+*   **(High)** Sebagai pengguna baru, saya ingin bisa mendaftar dengan mudah menggunakan nomor telepon atau akun Google agar bisa cepat memulai.
+*   **(Medium)** Sebagai pengguna baru, saya ingin melihat tutorial singkat (3-4 layar) yang menjelaskan fungsi utama aplikasi agar saya tidak bingung.
 
 #### **5.2. Manajemen Pemasok (Kontak)**
-*   **(P0)** Sebagai pengguna, saya ingin bisa menambahkan, melihat, mengedit, dan menghapus data pemasok (Nama, Toko, No. Telepon, No. WhatsApp, Kategori, Catatan).
-*   **(P0)** Sebagai pengguna, saya ingin bisa menekan tombol kontak di profil pemasok untuk langsung menelepon atau memulai chat WhatsApp.
-*   **(P0)** Sebagai pengguna, saya ingin bisa mencari pemasok berdasarkan nama.
+*   **(High)** Sebagai pengguna, saya ingin bisa menambahkan, melihat, mengedit, dan menghapus data pemasok (Nama, Toko, No. Telepon, No. WhatsApp, Kategori, Catatan).
+*   **(High)** Sebagai pengguna, saya ingin bisa menekan tombol kontak di profil pemasok untuk langsung menelepon atau memulai chat WhatsApp.
+*   **(High)** Sebagai pengguna, saya ingin bisa mencari pemasok berdasarkan nama.
 
 #### **5.3. Manajemen Produk (Bahan Baku)**
-*   **(P0)** Sebagai pengguna, saya ingin bisa menambahkan, melihat, mengedit, dan menghapus daftar produk/bahan baku yang sering saya beli (misal: "Ayam Broiler", "Beras Pandan Wangi").
-*   **(P0)** Setiap produk harus memiliki satuan (misal: kg, liter, pcs, ikat, karung).
+*   **(High)** Sebagai pengguna, saya ingin bisa menambahkan, melihat, mengedit, dan menghapus daftar produk/bahan baku yang sering saya beli (misal: "Ayam Broiler", "Beras Pandan Wangi").
+*   **(High)** Setiap produk harus memiliki satuan (misal: kg, liter, pcs, ikat, karung).
 
 #### **5.4. Pencatatan Transaksi Pembelian**
-*   **(P0)** Sebagai pengguna, saya ingin bisa mencatat transaksi pembelian baru dengan mengisi form sederhana (Pilih Pemasok, Tanggal, Daftar Item [Produk, Jumlah, Harga Satuan/Total], Status Pembayaran [Lunas/Belum Lunas]).
-*   **(P0)** Jika status "Belum Lunas", transaksi tersebut harus otomatis tercatat sebagai utang.
-*   **(P1)** Sebagai pengguna, saya ingin bisa melihat daftar riwayat semua transaksi dan memfilternya berdasarkan pemasok atau rentang tanggal.
+*   **(High)** Sebagai pengguna, saya ingin bisa mencatat transaksi pembelian baru dengan mengisi form sederhana (Pilih Pemasok, Tanggal, Daftar Item [Produk, Jumlah, Harga Satuan/Total], Status Pembayaran [Lunas/Belum Lunas]).
+*   **(High)** Jika status "Belum Lunas", transaksi tersebut harus otomatis tercatat sebagai utang.
+*   **(Medium)** Sebagai pengguna, saya ingin bisa melihat daftar riwayat semua transaksi dan memfilternya berdasarkan pemasok atau rentang tanggal.
 
 #### **5.5. Fitur Inti: Pembanding Harga & Pelacakan Utang**
-*   **(P0)** Sebagai pengguna, saya ingin bisa memilih satu produk dan aplikasi akan menampilkan daftar harga terakhir dari semua pemasok yang menjual produk tersebut, diurutkan dari yang termurah.
-*   **(P0)** Sebagai pengguna, saya ingin melihat total akumulasi utang saya kepada semua pemasok di halaman utama (Dashboard).
-*   **(P0)** Sebagai pengguna, saya ingin melihat rincian utang per pemasok dan bisa menandainya sebagai "Lunas" saat sudah dibayar.
+*   **(High)** Sebagai pengguna, saya ingin bisa memilih satu produk dan aplikasi akan menampilkan daftar harga terakhir dari semua pemasok yang menjual produk tersebut, diurutkan dari yang termurah.
+*   **(High)** Sebagai pengguna, saya ingin melihat total akumulasi utang saya kepada semua pemasok di halaman utama (Dashboard).
+*   **(High)** Sebagai pengguna, saya ingin melihat rincian utang per pemasok dan bisa menandainya sebagai "Lunas" saat sudah dibayar.
 
 ### **6. Persyaratan Non-Fungsional**
 
 *   **Performa:** Aplikasi harus ringan dan dapat berjalan lancar di ponsel Android kelas menengah ke bawah. Waktu muat tidak boleh lebih dari 3 detik.
 *   **Usability:** Antarmuka harus sangat intuitif, menggunakan ikon yang jelas dan bahasa Indonesia yang mudah dipahami. Alur kerja harus bisa diselesaikan dengan jumlah klik minimal.
-*   **Offline First:** Pengguna harus bisa mencatat transaksi baru bahkan saat tidak ada koneksi internet. Data akan disinkronkan secara otomatis saat koneksi kembali tersedia. (**Ini adalah P1 yang sangat penting untuk nilai jual**).
+*   **Offline First:** Pengguna harus bisa mencatat transaksi baru bahkan saat tidak ada koneksi internet. Data akan disinkronkan secara otomatis saat koneksi kembali tersedia. (**Ini adalah Medium yang sangat penting untuk nilai jual**).
 *   **Keamanan:** Data pengguna (kontak, transaksi) harus disimpan dengan aman di server dan dienkripsi saat transit.
 *   **Platform:** Aplikasi ini akan dibuat untuk platform **Android** terlebih dahulu.
 
@@ -88,7 +84,7 @@ User stories dikelompokkan berdasarkan fitur utama. **Prioritas: P0 = Wajib ada 
 
 Aplikasi akan menggunakan model **Freemium**:
 *   **Versi Gratis:**
-    *   Akses ke semua fitur P0 yang tercantum di atas.
+    *   Akses ke semua fitur High yang tercantum di atas.
     *   Batasan: Maksimal 20 Pemasok dan 50 Produk.
     *   Mungkin akan menampilkan iklan yang tidak mengganggu (misal: banner kecil).
 *   **Versi Premium (Berbayar - Model Langganan Tahunan/Bulanan):**
