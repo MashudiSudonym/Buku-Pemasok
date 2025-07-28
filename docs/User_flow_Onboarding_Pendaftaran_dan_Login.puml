@@ -1,0 +1,46 @@
+@startuml UserFlow_Onboarding
+
+!theme plain
+title User Flow: Onboarding (Pendaftaran & Login)
+
+start
+
+:Pengguna membuka aplikasi untuk pertama kali;
+
+if (Sudah memiliki akun?) then (ya)
+  :Menampilkan Halaman Login;
+  :Pengguna memilih metode login (Google/Nomor HP);
+  if (Login via Google?) then (ya)
+    :Membuka dialog login Google;
+    if (Login Google Berhasil?) then (ya)
+      :Aplikasi melakukan sinkronisasi data awal;
+      :Menampilkan **Dashboard Utama**;
+      stop
+    else (tidak)
+      :Menampilkan pesan error login;
+      stop
+    endif
+  else (tidak, via Nomor HP)
+    :Pengguna memasukkan nomor HP;
+    :Aplikasi mengirim OTP;
+    :Pengguna memasukkan OTP;
+    if (OTP Benar?) then (ya)
+      :Aplikasi melakukan sinkronisasi data awal;
+      :Menampilkan **Dashboard Utama**;
+      stop
+    else (tidak)
+      :Menampilkan pesan error OTP;
+      stop
+    endif
+  endif
+else (tidak)
+  :Menampilkan Halaman Pendaftaran;
+  :Pengguna memilih metode daftar (Google/Nomor HP);
+  ' Proses pendaftaran mirip dengan login, diasumsikan berhasil
+  :Pengguna menyelesaikan proses pendaftaran;
+  :Menampilkan tutorial singkat (opsional);
+  :Menampilkan **Dashboard Utama** (kosong);
+  stop
+endif
+
+@enduml

@@ -1,0 +1,41 @@
+@startuml UserFlow_CatatTransaksi
+
+!theme plain
+title User Flow: Mencatat Transaksi Pembelian Baru
+
+start
+
+:Pengguna berada di **Dashboard Utama**;
+
+:Tekan tombol besar "+" (Catat Transaksi Baru);
+-> Menampilkan Form Transaksi Baru;
+
+:Pengguna memilih Pemasok dari daftar yang ada;
+:Pengguna mengatur Tanggal Transaksi;
+
+repeat
+  :Tekan "Tambah Item";
+  -> Menampilkan dialog pilih produk;
+  :Pengguna memilih Produk dari daftar yang ada;
+  :Pengguna memasukkan Kuantitas & Harga Total item;
+  :Tekan "Simpan Item";
+  :Item ditambahkan ke daftar belanja di form;
+repeat while (Ingin tambah item lain?) is (ya)
+
+:Pengguna memilih Status Pembayaran (Lunas/Belum Lunas);
+
+:Tekan tombol "Simpan Transaksi";
+
+:Data transaksi & item disimpan ke SQLite lokal;
+note right
+  - Membuat 1 record di `purchase_transactions`
+  - Membuat N record di `transaction_items`
+  - Total utang di dashboard akan ter-update jika "Belum Lunas"
+end note
+
+:Aplikasi kembali ke **Dashboard Utama**;
+:Menampilkan notifikasi "Transaksi berhasil disimpan";
+
+stop
+
+@enduml

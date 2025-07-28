@@ -1,0 +1,36 @@
+@startuml UserFlow_TambahPemasok
+
+!theme plain
+title User Flow: Menambah Pemasok Baru
+
+start
+
+:Pengguna berada di **Dashboard Utama**;
+
+:Tekan tab/menu "Pemasok";
+-> Menampilkan Halaman Daftar Pemasok;
+
+:Tekan tombol "+" (Tambah Pemasok Baru);
+-> Menampilkan Form Tambah Pemasok;
+
+:Pengguna mengisi data pemasok (Nama, No. HP, dll);
+
+:Tekan tombol "Simpan";
+
+if (Validasi Data Berhasil?) then (ya)
+  :Data disimpan ke SQLite lokal;
+  note right
+    Status data: "CREATED"
+    Akan disinkronkan ke server
+    di latar belakang.
+  end note
+  :Aplikasi kembali ke Halaman Daftar Pemasok;
+  :Pemasok baru muncul di daftar;
+  stop
+else (tidak, misal nama kosong)
+  :Menampilkan pesan error validasi di form;
+  :Pengguna tetap di Form Tambah Pemasok;
+  stop
+endif
+
+@enduml

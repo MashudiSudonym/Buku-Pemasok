@@ -1,0 +1,47 @@
+@startuml UserFlow_CoreLoop
+
+!theme plain
+title User Flow: Core Loop (Banding Harga & Cek Utang)
+
+start
+
+partition "Skenario 1: Membandingkan Harga" {
+  :Pengguna berada di **Dashboard Utama**;
+  :Tekan tab/menu "Produk";
+  -> Menampilkan Halaman Daftar Produk;
+
+  :Tekan pada salah satu produk (misal: "Ayam Broiler");
+  -> Menampilkan Halaman Detail Produk;
+  ' Halaman ini juga bisa langsung berupa dialog/layar perbandingan
+
+  :Aplikasi menampilkan daftar harga terakhir untuk "Ayam Broiler";
+  note right
+    Data diambil dari tabel `transaction_items`
+    dan di-join dengan `purchase_transactions` & `suppliers`.
+    Diurutkan dari harga termurah.
+  end note
+  :Pengguna melihat perbandingan harga dari berbagai pemasok;
+  :Pengguna membuat keputusan belanja;
+}
+
+partition "Skenario 2: Melihat Rincian Utang" {
+  :Pengguna berada di **Dashboard Utama**;
+  :Pengguna melihat kartu "Total Utang";
+
+  :Tekan pada kartu "Total Utang";
+  -> Menampilkan Halaman Rincian Utang;
+
+  :Aplikasi menampilkan daftar utang, dikelompokkan per pemasok;
+  :Pengguna bisa menekan salah satu utang untuk melihat detail transaksi;
+
+  if (Ingin melunasi utang?) then (ya)
+    :Tekan tombol "Tandai Lunas";
+    :Status transaksi diubah di SQLite lokal;
+    :Daftar utang ter-update;
+    :Total utang di Dashboard berkurang;
+  endif
+}
+
+stop
+
+@enduml

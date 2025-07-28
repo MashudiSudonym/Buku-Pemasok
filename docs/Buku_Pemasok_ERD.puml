@@ -1,0 +1,84 @@
+@startuml BukuPemasokERD
+
+' Skin parameters for a cleaner look
+skinparam linetype ortho
+skinparam monochrome true
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam genericDisplay old
+
+' Hide stereotypes and circles for a classic ERD look
+hide circle
+hide stereotype
+
+' Define entities (tables)
+entity "users" as users {
+  + **id** [UUID] <<PK>>
+  --
+  google_id [VARCHAR(255)] <<UNIQUE>>
+  phone_number [VARCHAR(20)] <<UNIQUE>>
+  full_name [VARCHAR(100)]
+  created_at [TIMESTAMPTZ]
+  updated_at [TIMESTAMPTZ]
+}
+
+entity "suppliers" as suppliers {
+  + **id** [UUID] <<PK>>
+  --
+  # user_id [UUID] <<FK>>
+  name [VARCHAR(150)]
+  store_name [VARCHAR(150)]
+  phone_number [VARCHAR(20)]
+  whatsapp_number [VARCHAR(20)]
+  category [VARCHAR(100)]
+  notes [TEXT]
+  created_at [TIMESTAMPTZ]
+  updated_at [TIMESTAMPTZ)]
+}
+
+entity "products" as products {
+  + **id** [UUID] <<PK>>
+  --
+  # user_id [UUID] <<FK>>
+  name [VARCHAR(150)]
+  unit [VARCHAR(50)]
+  created_at [TIMESTAMPTZ]
+  updated_at [TIMESTAMPTZ]
+}
+
+entity "purchase_transactions" as transactions {
+  + **id** [UUID] <<PK>>
+  --
+  # user_id [UUID] <<FK>>
+  # supplier_id [UUID] <<FK>>
+  transaction_date [TIMESTAMPTZ]
+  payment_status [ENUM]
+  total_amount [DECIMAL]
+  created_at [TIMESTAMPTZ]
+  updated_at [TIMESTAMPTZ]
+}
+
+entity "transaction_items" as items {
+  + **id** [UUID] <<PK>>
+  --
+  # transaction_id [UUID] <<FK>>
+  # product_id [UUID] <<FK>>
+  quantity [DECIMAL]
+  price [DECIMAL]
+  created_at [TIMESTAMPTZ]
+}
+
+' Define relationships between entities
+' Cardinality: |o-- (zero or one), ||-- (one and only one), }o-- (zero or many), }|-- (one or many)
+
+users }|--|{ suppliers    : "manages"
+users }|--|{ products     : "defines"
+users }|--|{ transactions : "records"
+
+suppliers }o--|{ transactions : "receives"
+
+transactions }|--|{ items      : "contains"
+
+products }o--|{ items      : "is part of"
+
+@enduml
