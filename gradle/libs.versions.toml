@@ -15,6 +15,7 @@ kspVersion = "2.2.0-2.0.2"
 timberVersion = "5.0.1"
 roomVersion = "2.7.2"
 pagingVersion = "3.3.6"
+ktorVersion = "3.2.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -24,6 +25,7 @@ supabase-realtime-kt = { module = "io.github.jan-tennert.supabase:realtime-kt" }
 supabase-auth-kt = { module = "io.github.jan-tennert.supabase:auth-kt" }
 supabase-postgrest-kt = { module = "io.github.jan-tennert.supabase:postgrest-kt" }
 supabase-bom = { module = "io.github.jan-tennert.supabase:bom", version.ref = "supabaseBom" }
+supabase-serializer-moshi = { module = "io.github.jan-tennert.supabase:serializer-moshi", version.ref = "supabaseBom" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -50,6 +52,8 @@ room-paging = {group = "androidx.room", name = "room-paging", version.ref = "roo
 paging-runtime = {group = "androidx.paging", name = "paging-runtime", version.ref = "pagingVersion" }
 paging-testing = {group = "androidx.paging", name = "paging-common", version.ref = "pagingVersion" }
 paging-compose = {group = "androidx.paging", name = "paging-compose", version.ref = "pagingVersion" }
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktorVersion" }
+ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktorVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -57,4 +61,5 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-hilt = { id = "com.google.dagger.hilt.android" }
 ksp = { id = "com.google.devtools.ksp", version.ref="kspVersion"}
+kotlin-parcelize = { id = "kotlin-parcelize" }
 

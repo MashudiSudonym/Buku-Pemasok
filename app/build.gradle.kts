@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.parcelize)
 }
 
 android {
@@ -43,6 +44,9 @@ android {
 
 dependencies {
 
+    implementation(libs.supabase.serializer.moshi)
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.cio)
     implementation(libs.paging.runtime)
     implementation(libs.paging.compose)
     implementation(libs.kotlinx.coroutines.core)
