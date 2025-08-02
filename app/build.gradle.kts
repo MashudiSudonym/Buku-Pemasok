@@ -75,8 +75,6 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(platform(libs.supabase.bom))
     implementation(libs.supabase.postgrest.kt)
-    implementation(libs.supabase.auth.kt)
-    implementation(libs.supabase.realtime.kt)
     testImplementation(libs.junit)
     testImplementation(libs.room.testing)
     testImplementation(libs.paging.testing)
