@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "885246818673",
+    "project_id": "buku-pemasok",
+    "storage_bucket": "buku-pemasok.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885246818673:android:824b307caa366a062aded0",
+        "android_client_info": {
+          "package_name": "com.tigasatudesember.bukupemasok"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885246818673-b983gobksatiou3es4fkch4v9isagu5o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tigasatudesember.bukupemasok",
+            "certificate_hash": "6d2d8b6636a5b784fdcf242ae094d27e54d62476"
+          }
+        },
+        {
+          "client_id": "885246818673-5pcbdg2pb8cpn0dclmmidkclqvjilmoi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgtWq8lmYNvpSa869KH851vZ2dYInPinw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885246818673-5pcbdg2pb8cpn0dclmmidkclqvjilmoi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -16,6 +16,8 @@ timberVersion = "5.0.1"
 roomVersion = "2.7.2"
 pagingVersion = "3.3.6"
 ktorVersion = "3.2.2"
+gmsGoogleServicesVersion = "4.3.3"
+firebaseBomVersions = "34.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -52,6 +54,8 @@ paging-testing = {group = "androidx.paging", name = "paging-common", version.ref
 paging-compose = {group = "androidx.paging", name = "paging-compose", version.ref = "pagingVersion" }
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktorVersion" }
 ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktorVersion" }
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBomVersions" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics", version.ref = "firebaseBomVersions" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -60,4 +64,5 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 android-hilt = { id = "com.google.dagger.hilt.android" }
 ksp = { id = "com.google.devtools.ksp", version.ref="kspVersion"}
 kotlin-parcelize = { id = "kotlin-parcelize" }
+gms-google-services = { id = "com.google.gms.google-services", version.ref = "gmsGoogleServicesVersion" }
 

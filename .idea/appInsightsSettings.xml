@@ -22,10 +22,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.tigasatudesember.bukupemasok" />
+                  <option name="mobileSdkAppId" value="1:885246818673:android:824b307caa366a062aded0" />
+                  <option name="projectId" value="buku-pemasok" />
+                  <option name="projectNumber" value="885246818673" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
