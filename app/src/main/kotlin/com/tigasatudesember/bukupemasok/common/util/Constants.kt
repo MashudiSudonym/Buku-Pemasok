@@ -1,6 +1,8 @@
 package com.tigasatudesember.bukupemasok.common.util
 
+import com.tigasatudesember.bukupemasok.BuildConfig
+
 object Constants {
-    const val SUPABASE_URL = "https://psejukecmfiqlnyespug.supabase.co"
-    const val SUPABASE_KEY = "sb_publishable_nd5YLD_vqFu9_jPdj5w2tA_KVn6gAF0"
+    const val SUPABASE_URL = BuildConfig.SUPABASE_URL
+    const val SUPABASE_KEY = BuildConfig.SUPABASE_ANON_KEY
 }

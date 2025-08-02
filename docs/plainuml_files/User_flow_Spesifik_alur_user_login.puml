@@ -1,0 +1,60 @@
+@startuml LoginWithGoogleSequence
+
+!theme plain
+title Flow Diagram: Login dengan Google OAuth
+
+actor "Pengguna" as User
+participant "Aplikasi Android" as App
+participant "Google Sign-In SDK" as GoogleSDK
+participant "Supabase Auth" as Supabase
+
+autonumber "<b>[0]</b>"
+
+User -> App: Tekan tombol "Masuk dengan Google"
+activate App
+
+App -> GoogleSDK: Panggil `signIn()`
+activate GoogleSDK
+
+GoogleSDK -> User: Tampilkan dialog pilih Akun Google
+User -> GoogleSDK: Pilih akun
+
+GoogleSDK -> GoogleSDK: Memproses autentikasi dengan server Google
+
+alt #LightGreen Sukses Autentikasi dengan Google
+    GoogleSDK --> App: Kembalikan ID Token Google
+    deactivate GoogleSDK
+
+    App -> Supabase: Panggil `signInWithIdToken(provider: 'google', token: idToken)`
+    activate Supabase
+
+    Supabase -> Supabase: Verifikasi ID Token & ambil data pengguna (email, nama)
+
+    alt #LightGreen User sudah ada di Supabase
+        Supabase --> App: Kembalikan session pengguna yang sudah ada
+    else #LightYellow User belum ada di Supabase (login pertama kali)
+        Supabase -> Supabase: Buat entri baru di `auth.users` & **tabel `public.users`**
+        note right of Supabase
+            Ini bisa diotomatisasi dengan
+            PostgreSQL Trigger di Supabase.
+            Trigger ini berjalan saat ada
+            user baru di `auth.users`.
+        end note
+        Supabase --> App: Kembalikan session pengguna baru
+    end
+
+    deactivate Supabase
+
+    App -> App: Simpan session ke local storage
+    App -> User: Alihkan ke **Tampilan Utama (Dashboard)**
+    deactivate App
+
+else #LightCoral Gagal Autentikasi dengan Google
+    GoogleSDK --> App: Kembalikan error (misal: pengguna membatalkan)
+    deactivate GoogleSDK
+
+    App -> User: Tampilkan pesan error di Halaman Login ("Gagal login dengan Google. Silakan coba lagi.")
+    deactivate App
+end
+
+@enduml
