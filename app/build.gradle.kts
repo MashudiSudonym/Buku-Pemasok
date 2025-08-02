@@ -50,6 +50,9 @@ android {
 
 dependencies {
 
+    implementation(libs.compose.destinations)
+    ksp(libs.compose.destinations.ksp)
+    implementation(libs.compose.destinations.bottom.sheet)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
     implementation(libs.supabase.serializer.moshi)
