@@ -16,9 +16,10 @@ timberVersion = "5.0.1"
 roomVersion = "2.7.2"
 pagingVersion = "3.3.6"
 ktorVersion = "3.2.3"
-composeDestinationsVersion = "2.2.0"
+composeDestinationsVersion = "2.1.1"
 googleServicesVersion = "4.4.3"
 firebaseBomVersion = "34.0.0"
+gmsPlayServicesAuthVersion = "21.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -57,9 +58,11 @@ ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref =
 ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktorVersion" }
 compose-destinations-core = { group = "io.github.raamcosta.compose-destinations", name = "core", version.ref = "composeDestinationsVersion" }
 compose-destinations-ksp = { group = "io.github.raamcosta.compose-destinations", name = "ksp", version.ref = "composeDestinationsVersion" }
-compose-destinations-bottom-sheet = { group = "io.github.raamcosta.compose-destinations", name = "animations-bottom-sheet", version.ref = "composeDestinationsVersion" }
+compose-destinations-bottom-sheet = { group = "io.github.raamcosta.compose-destinations", name = "bottom-sheet", version.ref = "composeDestinationsVersion" }
 firebaseBom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBomVersion" }
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx" }
+play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "gmsPlayServicesAuthVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
