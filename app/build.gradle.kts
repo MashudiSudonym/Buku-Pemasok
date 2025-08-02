@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.parcelize)
-    alias(libs.plugins.gms.google.services)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -50,13 +50,11 @@ android {
 
 dependencies {
 
-    implementation(libs.compose.destinations)
+    implementation(platform(libs.firebaseBom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.compose.destinations.core)
     ksp(libs.compose.destinations.ksp)
     implementation(libs.compose.destinations.bottom.sheet)
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.analytics)
-    implementation(libs.firebase.auth.ktx)
-    implementation(libs.play.services.auth)
     implementation(libs.supabase.serializer.moshi)
     implementation(libs.ktor.client.core)
     implementation(libs.ktor.client.cio)

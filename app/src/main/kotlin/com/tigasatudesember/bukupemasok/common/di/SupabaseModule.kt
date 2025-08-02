@@ -1,5 +1,6 @@
 package com.tigasatudesember.bukupemasok.common.di
 
+import com.tigasatudesember.bukupemasok.common.util.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,8 +16,8 @@ object SupabaseModule {
     @Provides
     @Singleton
     fun supabaseClient(): SupabaseClient = createSupabaseClient(
-        supabaseUrl = "https://psejukecmfiqlnyespug.supabase.co",
-        supabaseKey = "sb_publishable_nd5YLD_vqFu9_jPdj5w2tA_KVn6gAF0"
+        supabaseUrl = Constants.SUPABASE_URL,
+        supabaseKey = Constants.SUPABASE_KEY,
     ) {
         install(Postgrest)
     }
