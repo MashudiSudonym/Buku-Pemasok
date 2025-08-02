@@ -1,4 +1,4 @@
-package com.tigasatudesember.bukupemasok.ui.theme
+package com.tigasatudesember.bukupemasok.common.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
