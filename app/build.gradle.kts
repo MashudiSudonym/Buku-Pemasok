@@ -55,6 +55,8 @@ dependencies {
     implementation(libs.compose.destinations.bottom.sheet)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.play.services.auth)
     implementation(libs.supabase.serializer.moshi)
     implementation(libs.ktor.client.core)
     implementation(libs.ktor.client.cio)

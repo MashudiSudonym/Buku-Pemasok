@@ -17,6 +17,7 @@ roomVersion = "2.7.2"
 pagingVersion = "3.3.6"
 ktorVersion = "3.2.2"
 gmsGoogleServicesVersion = "4.3.3"
+gmsPlayServicesAuthVersions = "21.1.0"
 firebaseBomVersions = "34.0.0"
 composeDestinationsVersion = "2.1.1"
 
@@ -56,7 +57,9 @@ paging-compose = {group = "androidx.paging", name = "paging-compose", version.re
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktorVersion" }
 ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktorVersion" }
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBomVersions" }
-firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics", version.ref = "firebaseBomVersions" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx" }
+play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "gmsPlayServicesAuthVersions" }
 compose-destinations = { group = "io.github.raamcosta.compose-destinations", name = "core", version.ref = "composeDestinationsVersion" }
 compose-destinations-ksp = { group = "io.github.raamcosta.compose-destinations", name = "ksp", version.ref = "composeDestinationsVersion" }
 compose-destinations-bottom-sheet = { group = "io.github.raamcosta.compose-destinations", name = "bottom-sheet", version.ref = "composeDestinationsVersion" }
